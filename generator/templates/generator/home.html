@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: rgba(0, 255, 255, 0.205);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        
+        
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        select{
+            background-color: aquamarine;
+            padding: 20px 40px;
+            font-size: 16px;
+            border: 0;
+            border-radius: 8%;
+            
+        }
+        .options{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .option{
+            background-color: aquamarine;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8%;
+        }
+
+        .btn-div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn{
+            background-color: rgb(168, 255, 127);
+            margin: 10px;
+            padding: 20px;
+            border: 0;
+            border-radius: 8%;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>password generator</h1>
+        <h2><a href="{%url 'about'%}">about</a></h2>
+        <div class="main-contain">
+            <form action="{% url 'password' %}">
+               
+                <div class="options">
+                    <select name="length" class="option">
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12" selected="select">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <div class="option">
+                        <input type="checkbox" name="uppercase">
+                        <label for="uppercase">Uppercase</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="number">
+                        <label for="uppercase">Number</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" name="special">
+                        <label for="uppercase">Special Character</label>
+                    </div>
+                </div>
+                
+                
+                <div class="btn-div">
+                    <input type="submit" value="Generate Password" class="btn">
+                </div>
+                
+            </form>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
