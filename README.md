@@ -1,2 +1,2 @@
 # password_generator
-generates new passwords using simple django
+generates random passwords using simple django and basic html css
